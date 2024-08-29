@@ -20,11 +20,14 @@ namespace Case409_csv
             dataGridView1.Location = new System.Drawing.Point(10, buttonLoadCsv.Bottom + 10);
             dataGridView1.Size = new System.Drawing.Size(this.ClientSize.Width - 20, this.ClientSize.Height - buttonLoadCsv.Height - 40);
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.DefaultCellStyle.Font = new Font(dataGridView1.Font.FontFamily, 13);
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font.FontFamily, 13);
 
             // ボタンの配置とサイズ設定（フォームサイズに連動）
             buttonLoadCsv.Location = new System.Drawing.Point(10, 10);
             buttonLoadCsv.Size = new System.Drawing.Size(100, 30);
             buttonLoadCsv.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            buttonLoadCsv.Font = new Font(buttonLoadCsv.Font.FontFamily, 13);
         }
 
         private void Form1_Load(object sender, EventArgs e)
