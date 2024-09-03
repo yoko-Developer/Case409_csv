@@ -1,11 +1,13 @@
 ﻿using CsvHelper;
 using System.Globalization;
 using System.Text;
-using YourNamespace;
+using Case409_csv.model;
 using CsvHelper.Configuration;
 
 namespace Case409_csv.Service
 {
+
+    // CSVファイルを取得するクラス
     public class GetCsvService
     {
         public List<GetCsv> ReadCsv(string filePath)

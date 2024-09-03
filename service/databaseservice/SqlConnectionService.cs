@@ -3,6 +3,8 @@ using System.Data.SqlClient;
 
 namespace Case409_csv.service.databaseservice
 {
+
+    // SQL Serverにアクセスするクラス
     internal class SqlConnectionService
     {
         private readonly String _connectionString;

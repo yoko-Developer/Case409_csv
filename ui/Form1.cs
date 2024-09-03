@@ -7,7 +7,7 @@ namespace Case409_csv
     {
         private BindingSource bindingSource1 = new BindingSource();
         private SqlConnectionService _dbService;
- 
+
         public Form1()
         {
             InitializeComponent();
@@ -41,6 +41,7 @@ namespace Case409_csv
             // DataGridViewの配置とサイズ設定（フォームサイズに連動）
             dataGridView1.Location = new System.Drawing.Point(10, buttonLoadCsv.Bottom + 10);
             dataGridView1.Size = new System.Drawing.Size(this.ClientSize.Width - 20, this.ClientSize.Height - buttonLoadCsv.Height - 40);
+            // Formのリサイズに応じて自動的にサイズ調整する
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.DefaultCellStyle.Font = new Font(dataGridView1.Font.FontFamily, 10);
             dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font.FontFamily, 13);
