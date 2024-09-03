@@ -6,6 +6,8 @@ using CsvHelper.Configuration;
 
 namespace Case409_csv.Service
 {
+
+    // CSVファイルを取得するクラス
     public class GetCsvService
     {
         public List<GetCsv> ReadCsv(string filePath)
