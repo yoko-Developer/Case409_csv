@@ -1,4 +1,4 @@
-﻿namespace Case409_csv.model.Attributes
+﻿namespace Case409_csv.model
 {
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class NameAttribute : Attribute

@@ -1,6 +1,4 @@
-﻿using Case409_csv.model.Attributes;
-
-namespace Case409_csv.model
+﻿namespace Case409_csv.model
 {
     public class GetCsv
     {
