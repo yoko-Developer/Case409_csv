@@ -56,7 +56,7 @@ namespace Case409_csv
             try
             {
                 var csvService = new GetCsvService(); // GetCsvService のインスタンスを作成
-                var records = csvService.ReadCsv(@"C:\Users\y-morioka\Documents\FI_JRK_0004.csv");
+                var records = csvService.ReadCsv(@"C:\Users\y-morioka\Documents\myWork\開発\案件409\c#\file\FI_JRK_0004.csv");
 
                 bindingSource1.DataSource = records;
             }
