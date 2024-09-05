@@ -30,14 +30,12 @@ namespace Case409_csv
             buttonLoadKA11.Click += buttonLoadKA11_Click;
             buttonLoadKA12.Click += buttonLoadKA12_Click;
             buttonLoadKA14.Click += buttonLoadKA14_Click;
-            buttonLoadDb.Click += buttonLoadDb_Click;
             buttonLoadCsv.Click += buttonLoadCsv_Click;
 
             // ボタンをフォームに追加
             Controls.Add(buttonLoadKA11);
             Controls.Add(buttonLoadKA12);
             Controls.Add(buttonLoadKA14);
-            Controls.Add(buttonLoadDb);
             Controls.Add(buttonLoadCsv);
         }
 
@@ -46,7 +44,7 @@ namespace Case409_csv
             // ボタンの位置とサイズの調整
             int buttonWidth = 100;
             int buttonHeight = 30;
-            int buttonMargin  = 10;
+            int buttonMargin = 10;
             int initialTop = 10;
 
             buttonLoadKA11.Location = new Point(buttonMargin, initialTop);
@@ -58,10 +56,7 @@ namespace Case409_csv
             buttonLoadKA14.Location = new Point(buttonLoadKA12.Right + buttonMargin, initialTop);
             buttonLoadKA14.Size = new Size(buttonWidth, buttonHeight);
 
-            buttonLoadDb.Location = new Point(buttonLoadKA14.Right + buttonMargin, initialTop);
-            buttonLoadDb.Size = new Size(buttonWidth, buttonHeight);
-
-            buttonLoadCsv.Location = new Point(buttonLoadDb.Right + buttonMargin, initialTop);
+            buttonLoadCsv.Location = new Point(buttonLoadKA14.Right + buttonMargin, initialTop);
             buttonLoadCsv.Size = new Size(buttonWidth, buttonHeight);
 
             // DataGridViewの配置とサイズ調整
@@ -88,7 +83,7 @@ namespace Case409_csv
 
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"DB connection error: {ex.Message}", "DB connection error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -105,7 +100,7 @@ namespace Case409_csv
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"DB connection error: {ex.Message}", "DB connection error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -122,7 +117,7 @@ namespace Case409_csv
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"DB connection error: {ex.Message}", "DB connection error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -137,17 +132,9 @@ namespace Case409_csv
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show($"DB connection error: {ex.Message}", "DB connection error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void buttonLoadDb_Click(object sender, EventArgs e)
-        {
-           
-            MessageBox.Show("Load DB button clicked.");
-            
-        }
-
 
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
