@@ -34,8 +34,7 @@ namespace Case409_csv.Service
             catch (Exception ex)
             {
                 // エラーハンドリング
-                MessageBox.Show($"error: {ex.Message}");
-                return null;
+                throw new ApplicationException($"CSVファイルの読み込み中にエラーが発生しました: {ex.Message}", ex);
             }
         }
     }
