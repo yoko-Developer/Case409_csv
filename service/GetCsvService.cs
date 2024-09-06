@@ -33,9 +33,8 @@ namespace Case409_csv.Service
             }
             catch (Exception ex)
             {
-                // エラーハンドリング
-                MessageBox.Show($"error: {ex.Message}");
-                return null;
+                // エラーをthrowする
+                throw new Exception($"CSV loading error: {ex.Message}");
             }
         }
     }
