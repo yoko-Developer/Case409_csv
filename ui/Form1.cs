@@ -47,6 +47,7 @@ namespace Case409_csv
             int buttonMargin = 10;
             int initialTop = 10;
 
+            // tableボタンを左側に設定
             buttonLoadKA11.Location = new Point(buttonMargin, initialTop);
             buttonLoadKA11.Size = new Size(buttonWidth, buttonHeight);
 
@@ -56,7 +57,9 @@ namespace Case409_csv
             buttonLoadKA14.Location = new Point(buttonLoadKA12.Right + buttonMargin, initialTop);
             buttonLoadKA14.Size = new Size(buttonWidth, buttonHeight);
 
-            buttonLoadCsv.Location = new Point(buttonLoadKA14.Right + buttonMargin, initialTop);
+            // CSVボタンを右端に設定
+            int formWidth = ClientSize.Width;
+            buttonLoadCsv.Location = new Point(formWidth - buttonWidth - buttonMargin, initialTop);
             buttonLoadCsv.Size = new Size(buttonWidth, buttonHeight);
 
             // DataGridViewの配置とサイズ調整
@@ -75,7 +78,7 @@ namespace Case409_csv
             try
             {
                 var csvService = new GetCsvService(); // GetCsvService のインスタンスを作成
-                var records = csvService.ReadCsv(@"C:\Users\y-morioka\Documents\myWork\開発\案件409\c#\file\FI_JRK_000.csv");
+                var records = csvService.ReadCsv(@"C:\Users\y-morioka\Documents\myWork\開発\案件409\c#\file\FI_JRK_0004.csv");
 
                 bindingSource1.DataSource = records;
                 dataGridView1.DataSource = bindingSource1;
@@ -83,7 +86,7 @@ namespace Case409_csv
 
             catch (Exception ex)
             {
-                MessageBox.Show($"Errorr: {ex.Message}", "DB connection error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error: {ex.Message}", "CSV loading error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -31,10 +31,10 @@ namespace Case409_csv.Service
                     return records;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // エラーハンドリング
-                throw new ApplicationException("CSV loading error");
+                // エラーをthrowする
+                throw new Exception($"CSV loading error: {ex.Message}");
             }
         }
     }
