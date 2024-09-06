@@ -18,76 +18,72 @@
             buttonLoadKA14 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            this.SuspendLayout();
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 50);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 388);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
-  
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(12, 50);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(776, 388);
+            dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             // 
             // buttonLoadCsv
             // 
-            this.buttonLoadCsv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.buttonLoadCsv.Location = new System.Drawing.Point(12, 12);
-            this.buttonLoadCsv.Name = "buttonLoadCsv";
-            this.buttonLoadCsv.Size = new System.Drawing.Size(75, 30);
-            this.buttonLoadCsv.TabIndex = 1;
-            this.buttonLoadCsv.Text = "Load CSV";
-            this.buttonLoadCsv.UseVisualStyleBackColor = false;
-            this.buttonLoadCsv.Click += new System.EventHandler(this.buttonLoadCsv_Click);
-
+            buttonLoadCsv.BackColor = Color.FromArgb(255, 192, 255);
+            buttonLoadCsv.Location = new Point(12, 12);
+            buttonLoadCsv.Name = "buttonLoadCsv";
+            buttonLoadCsv.Size = new Size(75, 30);
+            buttonLoadCsv.TabIndex = 1;
+            buttonLoadCsv.Text = "Load CSV";
+            buttonLoadCsv.UseVisualStyleBackColor = false;
+            buttonLoadCsv.Click += buttonLoadCsv_Click;
             // 
             // buttonLoadKA11
             // 
-            this.buttonLoadKA11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.buttonLoadKA11.Location = new System.Drawing.Point(93, 12);
-            this.buttonLoadKA11.Name = "buttonLoadKA11";
-            this.buttonLoadKA11.Size = new System.Drawing.Size(75, 30);
-            this.buttonLoadKA11.TabIndex = 2;
-            this.buttonLoadKA11.Text = "Load KA11";
-            this.buttonLoadKA11.UseVisualStyleBackColor = false;
-            this.buttonLoadKA11.Click += new System.EventHandler(this.buttonLoadKA11_Click);
-
+            buttonLoadKA11.BackColor = Color.FromArgb(192, 255, 255);
+            buttonLoadKA11.Location = new Point(93, 12);
+            buttonLoadKA11.Name = "buttonLoadKA11";
+            buttonLoadKA11.Size = new Size(75, 30);
+            buttonLoadKA11.TabIndex = 2;
+            buttonLoadKA11.Text = "KA11LICH";
+            buttonLoadKA11.UseVisualStyleBackColor = false;
+            buttonLoadKA11.Click += buttonLoadKA11_Click;
             // 
             // buttonLoadKA12
             // 
-            this.buttonLoadKA12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.buttonLoadKA12.Location = new System.Drawing.Point(174, 12);
-            this.buttonLoadKA12.Name = "buttonLoadKA12";
-            this.buttonLoadKA12.Size = new System.Drawing.Size(75, 30);
-            this.buttonLoadKA12.TabIndex = 3;
-            this.buttonLoadKA12.Text = "Load KA12";
-            this.buttonLoadKA12.UseVisualStyleBackColor = false;
-            this.buttonLoadKA12.Click += new System.EventHandler(this.buttonLoadKA12_Click);
+            buttonLoadKA12.BackColor = Color.FromArgb(192, 255, 255);
+            buttonLoadKA12.Location = new Point(174, 12);
+            buttonLoadKA12.Name = "buttonLoadKA12";
+            buttonLoadKA12.Size = new Size(75, 30);
+            buttonLoadKA12.TabIndex = 3;
+            buttonLoadKA12.Text = "KA12LICF";
+            buttonLoadKA12.UseVisualStyleBackColor = false;
+            buttonLoadKA12.Click += buttonLoadKA12_Click;
             // 
             // buttonLoadKA14
             // 
-            this.buttonLoadKA14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonLoadKA14.Location = new System.Drawing.Point(255, 12);
-            this.buttonLoadKA14.Name = "buttonLoadKA14";
-            this.buttonLoadKA14.Size = new System.Drawing.Size(75, 30);
-            this.buttonLoadKA14.TabIndex = 4;
-            this.buttonLoadKA14.Text = "Load KA14";
-            this.buttonLoadKA14.UseVisualStyleBackColor = false;
-            this.buttonLoadKA14.Click += new System.EventHandler(this.buttonLoadKA14_Click);
+            buttonLoadKA14.BackColor = Color.FromArgb(192, 255, 255);
+            buttonLoadKA14.Location = new Point(255, 12);
+            buttonLoadKA14.Name = "buttonLoadKA14";
+            buttonLoadKA14.Size = new Size(75, 30);
+            buttonLoadKA14.TabIndex = 4;
+            buttonLoadKA14.Text = "KA14HFUY";
+            buttonLoadKA14.UseVisualStyleBackColor = false;
+            buttonLoadKA14.Click += buttonLoadKA14_Click;
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonLoadKA14);
-            this.Controls.Add(this.buttonLoadKA12);
-            this.Controls.Add(this.buttonLoadKA11);
-            this.Controls.Add(this.buttonLoadCsv);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
-            this.Text = "CSV and DB Loader";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
+            ClientSize = new Size(804, 452);
+            Controls.Add(buttonLoadKA14);
+            Controls.Add(buttonLoadKA12);
+            Controls.Add(buttonLoadKA11);
+            Controls.Add(buttonLoadCsv);
+            Controls.Add(dataGridView1);
+            Name = "Form1";
+            Text = "CSV creation tool";
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
     }
 }

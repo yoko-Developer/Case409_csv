@@ -75,7 +75,7 @@ namespace Case409_csv
             try
             {
                 var csvService = new GetCsvService(); // GetCsvService のインスタンスを作成
-                var records = csvService.ReadCsv(@"C:\Users\y-morioka\Documents\myWork\開発\案件409\c#\file\FI_JRK_0004.csv");
+                var records = csvService.ReadCsv(@"C:\Users\y-morioka\Documents\myWork\開発\案件409\c#\file\FI_JRK_000.csv");
 
                 bindingSource1.DataSource = records;
                 dataGridView1.DataSource = bindingSource1;
@@ -83,7 +83,7 @@ namespace Case409_csv
 
             catch (Exception ex)
             {
-                MessageBox.Show($"DB connection error: {ex.Message}", "DB connection error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Errorr: {ex.Message}", "DB connection error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
