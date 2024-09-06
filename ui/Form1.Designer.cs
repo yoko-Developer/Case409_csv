@@ -2,7 +2,7 @@
 {
     partial class Form1
     {
-        private System.ComponentModel.IContainer components = null;
+ //     private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonLoadCsv;
         private System.Windows.Forms.Button buttonLoadKA11;

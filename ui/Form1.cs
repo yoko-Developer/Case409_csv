@@ -39,7 +39,7 @@ namespace Case409_csv
             Controls.Add(buttonLoadCsv);
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
+        private void Form1_Resize(object? sender, EventArgs e)
         {
             // ボタンの位置とサイズの調整
             int buttonWidth = 100;
@@ -72,7 +72,7 @@ namespace Case409_csv
         }
 
 
-        private void buttonLoadCsv_Click(object sender, EventArgs e)
+        private void buttonLoadCsv_Click(object? sender, EventArgs e)
         {
             // CSVファイルを読み込み、DataGridViewに表示する処理
             try
@@ -90,7 +90,7 @@ namespace Case409_csv
             }
         }
 
-        private void buttonLoadKA11_Click(object sender, EventArgs e)
+        private void buttonLoadKA11_Click(object? sender, EventArgs e)
         {
             // KA11LICH テーブルからデータ取得
             try
@@ -107,7 +107,7 @@ namespace Case409_csv
             }
         }
 
-        private void buttonLoadKA12_Click(object sender, EventArgs e)
+        private void buttonLoadKA12_Click(object? sender, EventArgs e)
         {
             // KA12LICF テーブルからデータ取得
             try
@@ -124,7 +124,7 @@ namespace Case409_csv
             }
         }
 
-        private void buttonLoadKA14_Click(object sender, EventArgs e)
+        private void buttonLoadKA14_Click(object? sender, EventArgs e)
         {
             try
             {
