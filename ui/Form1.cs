@@ -1,5 +1,8 @@
 using Case409_csv.service.databaseservice;
 using Case409_csv.Service;
+using CsvHelper;
+using CsvHelper.Configuration;
+using System.Globalization;
 
 namespace Case409_csv
 {
@@ -7,6 +10,12 @@ namespace Case409_csv
     {
         private BindingSource bindingSource1 = new BindingSource();
         private SqlConnectionService _dbService;
+        private Button buttonSaveCsv = new Button();
+
+        private String inputCsvFilePath = @"C:\Users\y-morioka\Documents\myWork\開発\案件409\c#\file\FI_JRK_0004.csv";
+        private String outputCsvFilePath = @"C:\Users\y-morioka\Documents\myWork\開発\案件409\c#\file\KENPO31.csv";
+
+
 
         public Form1()
         {
@@ -26,17 +35,26 @@ namespace Case409_csv
        
         private void InitializeAdditionalComponents()
         {
-        
+
+            buttonLoadKA11.Text = "Load KA11";
+            buttonLoadKA12.Text = "Load KA12";
+            buttonLoadKA14.Text = "Load KA14";
+            buttonLoadCsv.Text = "Load CSV";
+            buttonSaveCsv.Text = "Save CSV";
+
             buttonLoadKA11.Click += buttonLoadKA11_Click;
             buttonLoadKA12.Click += buttonLoadKA12_Click;
             buttonLoadKA14.Click += buttonLoadKA14_Click;
             buttonLoadCsv.Click += buttonLoadCsv_Click;
+            buttonSaveCsv.Click += buttonSaveCsv_Click;
 
             // ボタンをフォームに追加
             Controls.Add(buttonLoadKA11);
             Controls.Add(buttonLoadKA12);
             Controls.Add(buttonLoadKA14);
             Controls.Add(buttonLoadCsv);
+            Controls.Add(buttonSaveCsv);
+            Controls.Add(dataGridView1);
         }
 
         private void Form1_Resize(object? sender, EventArgs e)
@@ -62,6 +80,11 @@ namespace Case409_csv
             buttonLoadCsv.Location = new Point(formWidth - buttonWidth - buttonMargin, initialTop);
             buttonLoadCsv.Size = new Size(buttonWidth, buttonHeight);
 
+            // CSV保存ボタンの位置調整
+            buttonSaveCsv.Location = new Point(formWidth - 2 * buttonWidth - 2 * buttonMargin, initialTop);
+            buttonSaveCsv.Size = new Size(buttonWidth, buttonHeight);
+
+
             // DataGridViewの配置とサイズ調整
             dataGridView1.Location = new Point(buttonMargin, buttonLoadKA11.Bottom + buttonMargin);
             dataGridView1.Size = new Size(ClientSize.Width - 2 * buttonMargin, ClientSize.Height - buttonLoadKA11.Bottom - 2 * buttonMargin);
@@ -78,7 +101,7 @@ namespace Case409_csv
             try
             {
                 var csvService = new GetCsvService(); // GetCsvService のインスタンスを作成
-                var records = csvService.ReadCsv(@"C:\Users\y-morioka\Documents\myWork\開発\案件409\c#\file\FI_JRK_0004.csv");
+                var records = csvService.ReadCsv(inputCsvFilePath);
 
                 bindingSource1.DataSource = records;
                 dataGridView1.DataSource = bindingSource1;
@@ -90,12 +113,40 @@ namespace Case409_csv
             }
         }
 
+        private void buttonSaveCsv_Click(object? sender, EventArgs e)
+        {
+            // CSVファイルを保存する処理
+            try
+            {
+                var records = bindingSource1.DataSource as IEnumerable<dynamic>;
+                if (records == null)
+                {
+                    MessageBox.Show("No data to save.", "Save CSV error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                using (var writer = new StreamWriter(outputCsvFilePath))
+                using (var csv = new CsvWriter(writer, new CsvConfiguration(CultureInfo.InvariantCulture)))
+
+                {
+                    csv.WriteRecords(records);
+                }
+
+                MessageBox.Show($"CSV file saved to {outputCsvFilePath}", "Save CSV success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "CSV saving error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void buttonLoadKA11_Click(object? sender, EventArgs e)
         {
             // KA11LICH テーブルからデータ取得
             try
             {
                 String query = "SELECT * FROM KA11LICH";
+//              String query = "SELECT KOJINID FROM KA11LICH";
                 var dataTable = _dbService.GetData(query);
 
                 bindingSource1.DataSource = dataTable;

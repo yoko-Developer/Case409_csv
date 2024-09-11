@@ -7,7 +7,7 @@ using CsvHelper.Configuration;
 namespace Case409_csv.Service
 {
 
-    // CSVファイルを取得するクラス
+    // FI_JRK_0004.csvを取得するクラス
     public class GetCsvService
     {
         public List<GetCsv> ReadCsv(string filePath)
@@ -25,7 +25,7 @@ namespace Case409_csv.Service
                     // CSVファイルの区切り文字がカンマの場合
                     Delimiter = ",",
                 }))
-                { 
+                {
 
                     var records = csv.GetRecords<GetCsv>().ToList();
                     return records;
