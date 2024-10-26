@@ -10,9 +10,9 @@ namespace Case409_csv.Service
     // FI_JRK_0004.csvを取得するクラス
     public class GetCsvService
     {
-        public List<GetCsv> ReadCsv(string filePath)
-        {
-            try
+		public List<GetCsv> ReadCsv(string filePath)
+		{
+			try
             {
                 // エンコーディングプロバイダを登録
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
